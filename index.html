@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+       
+    </style>
+    <div class="tood">
+<div class="todo">
+    <h1 style="font-size: 56px;">To-Do List App</h1>
+    <br>
+    <input type="text" placeholder="Task" id="Input">
+    <button id="button">Add</button>
+    <div class="list">
+        <ol id="lis">
+
+        </ol>
+    </div>
+    
+</div>
+</div>
+    <script>
+var input = document.getElementById("Input")
+var lis = document.getElementById("lis")
+
+var button = document.getElementById("button")
+button.addEventListener("click",function(){
+    var text = document.createElement("li")
+text.innerHTML = `<div class="like"><li >${input.value} </li></div>` + "<div><i class='fa-solid fa-trash' onclick='remove(event)'></i> <i class='fa-regular fa-square-check'onclick='strike(event)'></i></div>"
+    lis.prepend(text)
+})
+function remove(event){
+event.target.closest("li").remove()
+}
+function strike(event){
+event.target.setAttribute("class","fa-solid fa-square-check")
+alert("congratulations! you have finsihed the task")
+}
+</script>
+</body>
+</html>
